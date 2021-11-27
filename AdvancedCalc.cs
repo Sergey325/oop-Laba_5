@@ -8,10 +8,10 @@ namespace ConsoleApp2
 {
     interface IAdvancedCalc
     {
-        double sqrt(double a);
+        double Sqrt(double a);
     }
     class AdvancedCalc : IAdvancedCalc
     {
-        public double sqrt(double a) => Math.Sqrt(a);
+        public double Sqrt(double a) => Math.Sqrt(a);
     }
 }
