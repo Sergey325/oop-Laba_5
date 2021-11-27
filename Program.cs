@@ -18,9 +18,10 @@ namespace ConsoleApp2
             var advcalc = new AdvancedCalc();
             while (cycle)
             {
-                switch (Input("1 - Ordinary calc\n2 - Advanced calc\nOther to exit: "))
+                switch (Input("1 - Ordinary calc\n2 - Advanced calc\nOther to exit"))
                 {
                     case "1":
+                        Console.WriteLine($"=== {ordcalc.Make} ===");
                         action = Input("Choose the action (+,-,*,/)");
                         try
                         {
@@ -54,6 +55,7 @@ namespace ConsoleApp2
                         
                         break;
                     case "2":
+                        Console.WriteLine($"=== {advcalc.Make} ===");
                         action = Input("Choose the action (+,-,*,/,sqrt)");
                         try
                         {
