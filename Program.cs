@@ -12,23 +12,22 @@ namespace ConsoleApp2
         {
             Console.WriteLine("=============== Calculator ===============");
             var cycle = true;
+            string action;
+            double a = 0, b = 0;
             var ordcalc = new OrdinaryCalc();
-            var advcalsc = new AdvancedCalc();
+            var advcalc = new AdvancedCalc();
             while (cycle)
             {
-                switch (Input("1 - Ordinary calc\n2 - Advanced calc\nOhter to exit: "))
+                switch (Input("1 - Ordinary calc\n2 - Advanced calc\nOther to exit: "))
                 {
                     case "1":
-                        var action = Input("Choose the action (+,=,*,/)");
-                        double a, b;
+                        action = Input("Choose the action (+,-,*,/)");
                         try
                         {
                             a = Convert.ToDouble(Input("Enter the first number"));
                             b = Convert.ToDouble(Input("Enter the second number"));
-                        }
-                        catch { Console.WriteLine("Numbers was entred incorrectly"); }
-                        switch (action) 
-                        {
+                            switch (action) 
+                            {
                             case "+":
                                 Console.WriteLine($"Asnwer: {ordcalc.Add(a, b)}");
                                 break;
@@ -39,14 +38,60 @@ namespace ConsoleApp2
                                 Console.WriteLine($"Asnwer: {ordcalc.Mul(a, b)}");
                                 break;
                             case "/":
-                                Console.WriteLine($"Asnwer: {ordcalc.Div(a, b)}");
+                                    if (b != 0) Console.WriteLine($"Asnwer: {ordcalc.Div(a, b)}");
+                                    else throw new Exception();
                                 break;
                             default:
                                 Console.WriteLine("The action was chosen incorrectly");
                                 break;
+                            }
                         }
+                        catch 
+                        { 
+                            Console.WriteLine("Numbers was entred incorrectly");
+                            break;
+                        }
+                        
                         break;
                     case "2":
+                        action = Input("Choose the action (+,-,*,/,sqrt)");
+                        try
+                        {
+                            if(action == "sqrt") a = Convert.ToDouble(Input("Enter the number"));
+                            else
+                            {
+                                a = Convert.ToDouble(Input("Enter the first number"));
+                                b = Convert.ToDouble(Input("Enter the second number"));
+                            }
+                            switch (action)
+                            {
+                            case "+":
+                                Console.WriteLine($"Asnwer: {advcalc.Add(a, b)}");
+                                break;
+                            case "-":
+                                Console.WriteLine($"Asnwer: {advcalc.Sub(a, b)}");
+                                break;
+                            case "*":
+                                Console.WriteLine($"Asnwer: {advcalc.Mul(a, b)}");
+                                break;
+                            case "/":
+                                if (b != 0) Console.WriteLine($"Asnwer: {ordcalc.Div(a, b)}");
+                                else throw new Exception();
+                                break;
+                            case "sqrt":
+                                Console.WriteLine($"Asnwer: {advcalc.Sqrt(a)}");
+                                break;
+                            default:
+                                Console.WriteLine("The action was chosen incorrectly");
+                                break;
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Numbers was entred incorrectly");
+                            break;
+                        }
+                        
                         break;
                     default:
                         cycle = false;

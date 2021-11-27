@@ -23,7 +23,7 @@ namespace ConsoleApp2
     {
         public override double Add(double a, double b) => a + b;
         public override double Sub(double a, double b) => a - b;
-        public override double Mul(double a, double b) => a + b;
-        public override double Div(double a, double b) => a - b;
+        public override double Mul(double a, double b) => a * b;
+        public override double Div(double a, double b) => a / b;
     }
 }

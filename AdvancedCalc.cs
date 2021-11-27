@@ -10,7 +10,7 @@ namespace ConsoleApp2
     {
         double Sqrt(double a);
     }
-    class AdvancedCalc : IAdvancedCalc
+    class AdvancedCalc : OrdinaryCalc, IAdvancedCalc
     {
         public double Sqrt(double a) => Math.Sqrt(a);
     }
