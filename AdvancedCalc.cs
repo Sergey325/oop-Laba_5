@@ -8,7 +8,7 @@ namespace ConsoleApp2
 {
     interface IAdvancedCalc
     {
-        double Sqrt(double a);
+        double sqrt(double a);
     }
     class AdvancedCalc
     {
