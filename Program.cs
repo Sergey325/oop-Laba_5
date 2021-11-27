@@ -10,6 +10,18 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("=============== Calculator ===============");
+            while (true)
+            {
+                switch ()
+                {
+                }
+            }
+        }
+        static string Input(string str)
+        {
+            Console.Write(str + ": ");
+            return Console.ReadLine();
         }
     }
 }
