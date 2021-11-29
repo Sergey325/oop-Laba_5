@@ -56,10 +56,14 @@ namespace ConsoleApp2
                         break;
                     case "2":
                         Console.WriteLine($"=== {advcalc.Make} ===");
-                        action = Input("Choose the action (+,-,*,/,sqrt)");
+                        action = Input("Choose the action (+,-,*,/,sqrt)").ToLower();
                         try
                         {
-                            if(action == "sqrt") a = Convert.ToDouble(Input("Enter the number"));
+                            if (action == "sqrt") 
+                            { 
+                                a = Convert.ToDouble(Input("Enter the number"));
+                                if (a < 1 || a > 10000) throw new Exception();
+                            }
                             else
                             {
                                 a = Convert.ToDouble(Input("Enter the first number"));
